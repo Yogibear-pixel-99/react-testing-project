@@ -3,9 +3,14 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Loading from './assets/features/shared/components/loading'
+import Severity from './assets/features/shared/components/severity'
 
 function App() {
-  const [count, setCount] = useState(7)
+  const [count, setCount] = useState(7);
+  const [isError, changeError] = useState("error");
+  const toggleError = () => {
+    changeError(isError == "error" ? "warning" : "error");
+  }
 
   return (
     <>
@@ -31,6 +36,8 @@ function App() {
       </p>
       <Loading isLoading={true} />
       <Loading isLoading={false} />
+      <Severity severity={isError ? "error" : "warning"}> Test</Severity>
+      <button onClick={toggleError}>Hier klicken</button>
     </>
   )
 }

@@ -1,14 +1,13 @@
 
-interface LoadingProbs {
-    isLoading: boolean;
-}
+// interface LoadingProbs {
+//     isLoading: boolean;
+// }
 
 
-    const loading = (probs: LoadingProbs) => {
-  return (
-    <div>{probs.isLoading ? <p>...loading</p> : <p>Loading finished</p>}</div>
-  )
-}
+
+const loading = ({ isLoading }: {isLoading: boolean}) => (
+  <div>{isLoading ? <span>Loading...</span> : <h2>Fertig geladen</h2>}</div>
+);
 
 
 export default loading
